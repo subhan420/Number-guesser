@@ -49,7 +49,7 @@ if (guess < 1 || guess > 100) {
     score = 0;
     updateScore();
     numBox.textContent = secret;
-    numBox.style.background = "#4c9";
+    numBox.style.background = "#FF0000";
   }
 });
 
