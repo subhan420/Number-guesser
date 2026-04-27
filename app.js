@@ -43,7 +43,7 @@ function checkGuess() {
   }
 
   if (score > 1) {
-    msg.textContent = guess > secret ? "Too high!" : "Too low!";
+    msg.textContent = guess > secret ? `Lower than ${guess}` : `Higher than ${guess}`;
     score--;
     updateScore();
   } else {
