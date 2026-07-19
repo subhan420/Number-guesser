@@ -40,7 +40,6 @@ function checkGuess() {
     numBox.style.background = "#4c9";
     msg.textContent = "Correct number!";
 
-    // Update highscore
     if (score > highscore) {
       highscore = score;
       localStorage.setItem("highscore", highscore);
