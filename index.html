@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Guess My Number!</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
-<style>
 
-</style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess My Number!</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
 
-  <span class="hint">(Between 1 and 30)</span>
   <button class="btn-again">Again!</button>
-  <button class="btn-change-mode">Change Mode</button>
-  <button class="btn-mode">Current mode: <span>Easy</span></button>
+
+  <span class="hint">(Between 1 and 30)</span>
 
   <h1 class="title">Guess My Number!</h1>
 
@@ -23,24 +24,54 @@
 
   <div class="number-box">?</div>
 
-  <div class="main-area">
-    <div class="left-panel">
-      <input class="guess-input" type="number" min="1" max="30" placeholder="Your guess" />
-      <button class="btn-check">Check!</button>
-    </div>
+  <main class="main-area">
 
-    <div class="right-panel">
+    <section class="left-panel">
+
+      <input
+        class="guess-input"
+        type="number"
+        min="1"
+        max="30"
+        placeholder="Your guess">
+
+      <button class="btn-check">Check!</button>
+
+    </section>
+
+    <section class="right-panel">
+
       <p class="status-msg">Start guessing...</p>
+
       <div class="score-line">
         <span class="dot dot-heart"></span>
-        Score: 20
+        <span>Score: 20</span>
       </div>
+
       <div class="score-line">
         <span class="dot dot-star"></span>
-        Highscore: 0
+        <span>Highscore: 0</span>
       </div>
-    </div>
+
+    </section>
+
+  </main>
+
+  <div class="mode-controls">
+
+    <button class="btn-mode">
+      Current Mode:
+      <span>Easy</span>
+    </button>
+
+    <button class="btn-change-mode">
+      Change Mode
+    </button>
+
   </div>
+
   <script src="app.js"></script>
+
 </body>
+
 </html>

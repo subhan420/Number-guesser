@@ -1,206 +1,229 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: #1a1a1a;
-  color: #eee;
-  font-family: "Press Start 2P", monospace;
   min-height: 100vh;
+  overflow-x: hidden;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
   position: relative;
-  padding: 0;
-  overflow-x: hidden;
+
+  background: #1a1a1a;
+  color: #eee;
+
+  font-family: "Press Start 2P", monospace;
 }
 
-.hint {
-  position: absolute;
-  top: 14px;
-  right: 18px;
-  font-size: 10px;
-  color: #ccc;
-  letter-spacing: 0.5px;
+button,
+input {
+  font-family: inherit;
+}
+
+.btn-again,
+.btn-mode,
+.btn-change-mode {
+  background: #eee;
+  color: #1a1a1a;
+
+  border: none;
+
+  padding: 10px 16px;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  image-rendering: pixelated;
+
+  transition: background 0.15s ease;
+}
+
+.btn-again:hover,
+.btn-mode:hover,
+.btn-change-mode:hover {
+  background: #fff;
+}
+
+.btn-again:active,
+.btn-mode:active,
+.btn-change-mode:active {
+  background: #ccc;
 }
 
 .btn-again {
   position: absolute;
   top: 10px;
   left: 14px;
-  background: #eee;
-  color: #1a1a1a;
-  border: none;
-  padding: 10px 16px;
-  font-family: "Press Start 2P", monospace;
-  font-size: 11px;
-  cursor: pointer;
-  image-rendering: pixelated;
-}
-.btn-again:hover {
-  background: #fff;
-}
-.btn-again:active {
-  background: #ccc;
 }
 
-.btn-change-mode {
+.hint {
   position: absolute;
-  top: 330px;
-  left: 369px;
-  background: #eee;
-  color: #1a1a1a;
-  border: none;
-  padding: 10px 16px;
-  font-family: "Press Start 2P", monospace;
-  font-size: 11px;
-  cursor: pointer;
-  image-rendering: pixelated;
-}
-.btn-change-mode:hover {
-  background: #fff;
-}
-.btn-change-mode:active {
-  background: #ccc;
-}
+  top: 14px;
+  right: 18px;
 
-.btn-mode {
-  position: absolute;
-  top: 50px;
-  left: 14px;
-  background: #eee;
-  color: #1a1a1a;
-  border: none;
-  padding: 10px 16px;
-  font-family: "Press Start 2P", monospace;
-  font-size: 11px;
-  cursor: pointer;
-  image-rendering: pixelated;
+  color: #ccc;
+  font-size: 10px;
+  letter-spacing: 0.5px;
 }
 
 .title {
-  margin-top: 56px;
-  font-size: clamp(18px, 4vw, 28px);
-  color: #eee;
-  letter-spacing: 2px;
-  text-align: center;
-  padding: 0 12px;
+  margin-top: 60px;
   margin-bottom: 20px;
+
+  padding: 0 12px;
+
+  text-align: center;
+
+  font-size: clamp(18px, 4vw, 28px);
+  letter-spacing: 2px;
 }
 
 .divider {
   width: 100%;
   height: 3px;
-  background: #555;
+
   margin-top: 18px;
+
+  background: #555;
 }
 
 .number-box {
-  margin-top: -26px;
+  width: 70px;
+  height: 70px;
+
+  margin-top: -28px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   background: #eee;
   color: #1a1a1a;
-  width: 68px;
-  height: 68px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  font-family: "Press Start 2P", monospace;
-  image-rendering: pixelated;
+
   border: 4px solid #999;
   outline: 4px solid #555;
+
+  font-size: 30px;
+
+  image-rendering: pixelated;
 }
 
 .main-area {
-  width: 100%;
-  max-width: 640px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: min(900px, 90%);
   margin-top: 60px;
   padding: 0 48px;
-  gap: 24px;
-}
 
-.left-panel {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 48px;
 }
 
-.guess-input {
-  background: #1a1a1a;
-  border: 3px solid #eee;
-  color: #eee;
-  font-family: "Press Start 2P", monospace;
-  font-size: 14px;
-  padding: 10px 12px;
-  width: 170px;
-  outline: none;
-}
-.guess-input:focus {
-  border-color: #fff;
-}
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.btn-check {
-  background: #1a1a1a;
-  color: #eee;
-  border: 3px solid #eee;
-  font-family: "Press Start 2P", monospace;
-  font-size: 11px;
-  padding: 10px 16px;
-  cursor: pointer;
-  width: fit-content;
-  letter-spacing: 1px;
-}
-.btn-check:hover {
-  background: #333;
-}
-.btn-check:active {
-  background: #444;
-}
-
+.left-panel,
 .right-panel {
   display: flex;
   flex-direction: column;
+}
+
+.left-panel {
+  gap: 16px;
+}
+
+.right-panel {
   gap: 20px;
   text-align: left;
 }
 
+.guess-input {
+  width: 180px;
+
+  padding: 12px;
+
+  background: #1a1a1a;
+  color: #eee;
+
+  border: 3px solid #eee;
+  outline: none;
+
+  font-size: 14px;
+  text-align: center;
+}
+
+.guess-input:focus {
+  border-color: #fff;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+}
+
+.btn-check {
+  width: fit-content;
+
+  padding: 10px 18px;
+
+  background: #1a1a1a;
+  color: #eee;
+
+  border: 3px solid #eee;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition: background 0.15s ease;
+}
+
+.btn-check:hover {
+  background: #333;
+}
+
+.btn-check:active {
+  background: #444;
+}
+
 .status-msg {
   font-size: 11px;
-  color: #eee;
-  letter-spacing: 1px;
   line-height: 1.8;
+  letter-spacing: 1px;
 }
 
 .score-line {
   display: flex;
   align-items: center;
   gap: 10px;
+
   font-size: 12px;
-  color: #eee;
 }
 
 .dot {
   width: 14px;
   height: 14px;
-  display: inline-block;
-  image-rendering: pixelated;
+
   flex-shrink: 0;
+  display: inline-block;
+
+  image-rendering: pixelated;
 }
+
 .dot-heart {
   background: #d44;
+
   clip-path: polygon(
     50% 15%,
     65% 5%,
@@ -214,8 +237,10 @@ input[type="number"]::-webkit-inner-spin-button {
     35% 5%
   );
 }
+
 .dot-star {
   background: #da4;
+
   clip-path: polygon(
     50% 0%,
     61% 35%,
@@ -230,43 +255,96 @@ input[type="number"]::-webkit-inner-spin-button {
   );
 }
 
-@media (max-width: 520px) {
-  .hint {
-    font-size: 8px;
-    top: 12px;
-    right: 10px;
-  }
-  .btn-again,
-  .btn-change-mode,
-  .btn-mode {
-    font-size: 9px;
-    padding: 8px 12px;
-  }
-  .title {
-    font-size: 16px;
-    margin-top: 60px;
-  }
-  .number-box {
-    width: 56px;
-    height: 56px;
-    font-size: 24px;
-  }
+.mode-controls {
+  width: min(900px, 100%);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  margin: 40px 0;
+  padding: 0 20px;
+}
+
+.btn-mode,
+.btn-change-mode {
+  min-width: 180px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
   .main-area {
     flex-direction: column;
     align-items: center;
-    margin-top: 48px;
+    gap: 36px;
+
     padding: 0 24px;
-    gap: 32px;
+    margin-top: 48px;
   }
-  .left-panel {
-    align-items: center;
-  }
+
+  .left-panel,
   .right-panel {
     align-items: center;
     text-align: center;
   }
+
   .guess-input {
     width: 170px;
+  }
+
+  .number-box {
+    width: 60px;
+    height: 60px;
+    font-size: 26px;
+  }
+
+  .mode-controls {
+    gap: 12px;
+    margin: 32px 0;
+    justify-content: center;
+  }
+
+  .btn-mode,
+  .btn-change-mode {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hint {
+    top: 12px;
+    right: 10px;
+
+    font-size: 8px;
+  }
+
+  .btn-again,
+  .btn-mode,
+  .btn-change-mode,
+  .btn-check {
+    font-size: 9px;
+    padding: 8px 12px;
+  }
+
+  .title {
+    margin-top: 60px;
+    font-size: 16px;
+  }
+
+  .guess-input {
+    width: 160px;
+    font-size: 12px;
+  }
+
+  .status-msg {
+    font-size: 10px;
+  }
+
+  .score-line {
+    font-size: 10px;
   }
 }
 
@@ -275,66 +353,56 @@ input[type="number"]::-webkit-inner-spin-button {
     font-size: 13px;
     letter-spacing: 1px;
   }
+
   .hint {
     font-size: 7px;
   }
+
+  .number-box {
+    width: 54px;
+    height: 54px;
+    font-size: 22px;
+  }
+
   .guess-input {
-    width: 150px;
-    font-size: 12px;
+    width: 145px;
+  }
+
+  .mode-controls {
+    padding: 0 12px;
+      justify-content: center;
   }
 }
 
-@media (max-width: 320px) {
-  .btn-change-mode {
-    top: 450px;
-    left: 98px;
-  }
-  .btn-mode {
-    top: 419px;
-    left: 67px;
-  }
+::selection {
+  background: #eee;
+  color: #1a1a1a;
 }
 
-@media (min-width: 321px) and (max-width: 375px) {
-  .btn-change-mode {
-    top: 450px;
-    left: 126px;
-  }
-  .btn-mode {
-    top: 419px;
-    left: 94px;
-  }
+button,
+input {
+  -webkit-tap-highlight-color: transparent;
 }
 
-@media (min-width: 376px) and (max-width: 425px) {
-  .btn-change-mode {
-    top: 450px;
-    left: 152px;
-  }
-  .btn-mode {
-    top: 419px;
-    left: 120px;
-  }
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
 }
 
-@media (min-width: 426px) and (max-width: 768px) {
-  .btn-change-mode {
-    top: 370px;
-    left: 452px;
-  }
-  .btn-mode {
-    top: 329px;
-    left: 452px;
-  }
+.guess-input::placeholder {
+  color: #888;
+  opacity: 1;
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .btn-change-mode {
-    top: 330px;
-    left: 241px;
-  }
-  .btn-mode {
-    top: 50px;
-    left: 14px;
-  }
+.btn-check,
+.btn-again,
+.btn-mode,
+.btn-change-mode {
+  user-select: none;
+}
+
+.number-box,
+.dot {
+  image-rendering: pixelated;
 }
